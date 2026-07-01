@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi amor ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9ecb,#ffc7dd);
+    overflow:hidden;
+}
+
+.container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    max-width:420px;
+    width:100%;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    animation:aparecer 1s;
+}
+
+h1{
+    color:#ff2d75;
+    margin-bottom:15px;
+}
+
+img{
+    width:220px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+button{
+    border:none;
+    padding:12px 25px;
+    border-radius:20px;
+    margin:10px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#si{
+    background:#ff2d75;
+    color:white;
+}
+
+#no{
+    background:#ddd;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#mensaje{
+    display:none;
+    animation:aparecer 1s;
+}
+
+p{
+    font-size:18px;
+    line-height:1.7;
+    color:#444;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.corazon{
+    position:absolute;
+    color:#ff2d75;
+    animation:subir 6s linear infinite;
+}
+
+@keyframes subir{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+<<audio id="musica" loop>
+    <source src="José José - Preso (Letra Oficial)(M4A_128K).m4a" type="audio/mp4">
+</audio>
+<body>
+
+<div class="container">
+
+<div class="card" id="pregunta">
+
+<h1>💖 ¿Te acuerdas qué fecha es hoy? 💖</h1>
+
+<!-- Cambia esta imagen por la del gato que quieras -->
+<img src="file_000000006074720ebea1aaa8fbcdae72.png">
+
+<div>
+<button id="si">Sí ❤️</button>
+<button id="no">No 😢</button>
+</div>
+
+</div>
+
+<div class="card" id="mensaje">
+
+<h1>❤️ Feliz mes, mi amor ❤️</h1>
+
+<p>
+Hoy cumplimos un mes más juntos, nuestros días están conectados porque nuestras almas y nuestros cuerpos son uno solo.
+<br><br>
+Te hago este pequeño detalle para que, en los días difíciles, siempre sepas que me tienes a mí, así como yo ya te tengo a ti, eres mi chica por la cual yo doy y daria todo por que te quiero con todo el corazon.
+<br><br>
+Te amo mucho. Que tengas un bonito día para ti, mi amor. ❤️
+<br><br>
+<b>Posdata:</b> Te extraño mucho. 🥺❤️
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("si").onclick = function() {
+    document.getElementById("pregunta").style.display = "none";
+    document.getElementById("mensaje").style.display = "block";
+document.getElementById("musica").play();
+    document.getElementById("José José - Preso (Letra Oficial)(M4A_128K).m4a").play();
+}
+
+const no=document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+let x=Math.random()*(window.innerWidth-120);
+let y=Math.random()*(window.innerHeight-60);
+
+no.style.position="absolute";
+no.style.left=x+"px";
+no.style.top=y+"px";
+});
+
+function crearCorazon(){
+
+const corazon=document.createElement("div");
+corazon.classList.add("corazon");
+
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+corazon.style.fontSize=(20+Math.random()*30)+"px";
+corazon.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+corazon.remove();
+},7000);
+
+}
+
+setInterval(crearCorazon,300);
+
+</script>
+
+</body>
+</html>
